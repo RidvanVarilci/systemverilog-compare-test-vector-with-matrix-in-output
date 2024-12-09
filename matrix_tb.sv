@@ -33,7 +33,7 @@ module testbench;
         // open the file
         file = $fopen("test_vectors.txt", "r");
         if (file == 0) begin
-            $error("Dosya açýlamadý!");
+            $error("Dosya aÃ§Ã½lamadÃ½!");
             $finish;
         end
 
@@ -47,13 +47,15 @@ module testbench;
            
 
             // Read the Hexadecimal data
-            read_count = $sscanf(line, "%2h_%2h_%2h_%2h", test_vectors[i][0], test_vectors[i][1], test_vectors[i][2],test_vectors[i][3],test_vectors[i][4],test_vectors[i][5]); // You can add columns to the matrix from here (dont forget _%2h)
+            read_count = $sscanf(line, "%2h_%2h_%2h_%2h", test_vectors[i][0], test_vectors[i][1], test_vectors[i][2],test_vectors[i][3],test_vectors[i][4],test_vectors[i][5]); 
+           // You can add columns to the matrix from here (dont forget _%2h)
        
         if (read_count != row) begin
                 $display("Invalid line: %s", line);
                 continue;
             end
-        $display("%h_%h_%h_%h", test_vectors[i][0], test_vectors[i][1], test_vectors[i][2],test_vectors[i][3],test_vectors[i][4],test_vectors[i][5]);//You can add columns to the matrix from here (dont forget _%h)
+        $display("%h_%h_%h_%h", test_vectors[i][0], test_vectors[i][1], test_vectors[i][2],test_vectors[i][3],test_vectors[i][4],test_vectors[i][5]);
+          //You can add columns to the matrix from here (dont forget _%h)
         end
 
         $display("----------------");
